@@ -3,4 +3,3 @@
 
 ## Integrantes
 - Sebastian Guerra
-- jhossep Martinez
