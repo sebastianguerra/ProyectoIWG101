@@ -59,7 +59,7 @@ ROOT_URLCONF = 'proyecto_iwg101.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [Path.joinpath(BASE_DIR, 'page', 'plantilla')],        'APP_DIRS': True,
+        'DIRS': [Path.joinpath(BASE_DIR, 'page', 'templates')],        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
