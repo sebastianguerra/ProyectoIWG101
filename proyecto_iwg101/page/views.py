@@ -4,7 +4,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    pass
+    
+    ## Si el usuario que entra a la pagina no ha iniciado sesion:
+    if not request.user.is_authenticated:
+        return render(request, "guest.html")
 
 def tests(request, id):
     pass
