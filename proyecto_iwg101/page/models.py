@@ -10,7 +10,13 @@ class Test(models.Model):
     pass
 
 class Pregunta(models.Model):
-    pass
+    id = models.AutoField(primary_key=True)
+    texto = models.CharField(max_length=100)
+    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    test = models.ForeignKey(Test, on_delete=models.CASCADE)
+    
+    def __str__(self) -> str:
+        return f"{self.text}, {self.area}"
 
 class Test_Realizacion(models.Model):
     id = models.AutoField(primary_key=True)
