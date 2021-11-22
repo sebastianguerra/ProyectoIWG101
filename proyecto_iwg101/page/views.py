@@ -9,7 +9,7 @@ from django.http import HttpResponse
 
 preguntas = [
     {
-        'texto': 'Te gusta el pan?', 'id': 1
+        'texto': 'Te gusta el pan?', 'id': 1, "area": "artes"
     },
     {
         'texto': 'comes queso?', 'id': 2
@@ -56,25 +56,23 @@ def about(request):
 
 def procesar_preguntas(request):
     i = 1
-    deacuerdo = 0
+    de_acuerdo = 0
     desacuerdo = 0
     if request.method == "POST":
         for i in range(8):
             i += 1
             print(request.POST[f"{i}"])
-            if request.POST[f"{i}"] == "0":
+            if request.POST[f"{i}"] == "0": 
                 desacuerdo += 1
             else:
-                deacuerdo += 1
-    valores = [
-        {"cantidad": deacuerdo},
-        {"cantidad": desacuerdo},
-    ]
+                de_acuerdo += 1 
 
-    context1 = {
-        "valores": valores
-    }
-    print("Deacuerdo: " + str(deacuerdo))
+    print("Deacuerdo: " + str(de_acuerdo))
     print("Desacuerdo: " + str(desacuerdo))
-    return render(request, "resultados_area.html", context1)
+    return render(request, "resultados_area.html", {
+        "valores": {
+            "de_acuerdo": de_acuerdo,
+            "desacuerdo": desacuerdo,
+        }
+    }) 
     
