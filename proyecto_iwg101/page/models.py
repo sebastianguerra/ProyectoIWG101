@@ -13,7 +13,15 @@ class Pregunta(models.Model):
     pass
 
 class Test_Realizacion(models.Model):
-    pass
+    id = models.AutoField(primary_key=True)
+    fecha_inicial = models.DateField()
+    fecha_last_update = models.DateTimeField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    test = models.ForeignKey(Test, on_delete=models.CASCADE)
+    resultado = models.ForeignKey(Area, on_delete=models.SET_NULL, null=True)
+    
+    def __str__(self) -> str:
+        return f"{self.fecha_inicial}"
 
 class Respuesta(models.Model):
     id = models.AutoField(primary_key=True)
