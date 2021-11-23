@@ -19,6 +19,7 @@ def tests(request, id):
     preguntas = Pregunta.objects.filter(test=test)
     return render(request, "tests.html", {
         'preguntas': preguntas,
+        'test': test,
     })
 
 def resultados(request):
