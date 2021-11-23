@@ -11,7 +11,7 @@
     <form action="/procesar_preguntas/" method="POST">
         {% csrf_token %}
         {% for pregunta in preguntas %}
-        <h4> {{ pregunta.texto }} </h4>
+            <h4> {{ pregunta.texto }} </h4>
             <div>
                 <input type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="1" checked>
                 <label for="a{{pregunta.id}}">Acuerdo</label>
@@ -26,8 +26,3 @@
     </form>
 </body>
 </html>
-
-
-
-
-
