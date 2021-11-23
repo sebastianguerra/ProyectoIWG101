@@ -8,8 +8,18 @@
 </head>
 <body>
     
-    <h1> De Acuerdo: {{ valores.de_acuerdo }} </h1>
-    <h1> Desacuerdo {{ valores.desacuerdo }} </h1>
-    
-</body>
+    <h1>Resultados</h1>
+    {% for testType in testTypes %}
+        <details>
+            <summary>{{testType}}</summary>
+            {% for test in tests %}
+                {% ifequal testType test.test %}
+                    <details>
+                        <summary>{{test}}</summary>
+                        a
+                    </details>
+                {% endifequal %}
+            {% endfor %}
+        </details>
+    {% endfor %}
 </html>
