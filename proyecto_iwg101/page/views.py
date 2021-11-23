@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from page.models import Pregunta, Test
+from page.models import Pregunta, Respuesta, Test, Test_Realizacion
 
 
 
@@ -29,24 +29,22 @@ def about(request):
     pass
 
 def procesar_preguntas(request):
-    i = 1
-    de_acuerdo = 0
-    desacuerdo = 0
     if request.method == "POST":
-        for i in range(8):
-            i += 1
-            print(request.POST[f"{i}"])
-            if request.POST[f"{i}"] == "0": 
-                desacuerdo += 1
-            else:
-                de_acuerdo += 1 
-
-    print("Deacuerdo: " + str(de_acuerdo))
-    print("Desacuerdo: " + str(desacuerdo))
-    return render(request, "resultados_area.html", {
-        "valores": {
-            "de_acuerdo": de_acuerdo,
-            "desacuerdo": desacuerdo,
-        }
-    }) 
+        test = Test.objects.get(id=request.POST["testID"])
+        realizacion = Test_Realizacion(
+            user=request.user,
+            test=test,
+        )
+        realizacion.save()
+        preguntas = Pregunta.objects.filter(test=test)    
+        for pregunta in preguntas:
+            respuesta = Respuesta(
+                user=request.user,
+                pregunta=pregunta,
+                respuesta=int(request.POST[f"{pregunta.id}"]),
+                test_realizacion=realizacion,
+            )
+            respuesta.save()
+            print(respuesta.user, respuesta.pregunta, respuesta.respuesta, respuesta.test_realizacion)
+        return HttpResponse("Todo bien:)")
     
