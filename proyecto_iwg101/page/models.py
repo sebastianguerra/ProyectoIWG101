@@ -25,7 +25,7 @@ class Pregunta(models.Model):
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
-        return f"{self.text}, {self.area}"
+        return f"{self.texto}, {self.area}"
 
 class Test_Realizacion(models.Model):
     id = models.AutoField(primary_key=True)
