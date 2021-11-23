@@ -24,21 +24,32 @@ def home(request):
             return redirect('/resultados/')
 
 def tests(request, id):
-    test = Test.objects.get(id=id)
-    preguntas = Pregunta.objects.filter(test=test)
-    return render(request, "tests.html", {
-        'preguntas': preguntas,
-        'test': test,
-    })
+    if request.user.is_authenticated:
+        test = Test.objects.get(id=id)
+        preguntas = Pregunta.objects.filter(test=test)
+        return render(request, "tests.html", {
+            'preguntas': preguntas,
+            'test': test,
+        })
+    else:
+        return redirect('/')
 
 def resultados(request):
-    return HttpResponse('Prueba ruta resultados')
+    usuario = request.user
+    if usuario.is_authenticated:
+        userTests = Test_Realizacion.objects.filter(user=usuario)
+        return render(request, "resultados_area.html", {
+            "tests": userTests,
+            "testTypes": Test.objects.all(),
+        })
+    else:
+        return redirect('/')
 
 def about(request):
     pass
 
 def procesar_preguntas(request):
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_authenticated:
         test = Test.objects.get(id=request.POST["testID"])
         realizacion = Test_Realizacion(
             user=request.user,
