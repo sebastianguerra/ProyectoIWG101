@@ -1,78 +1,59 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-
-preguntas = [
-    {
-        'texto': 'Te gusta el pan?', 'id': 1, "area": "artes"
-    },
-    {
-        'texto': 'comes queso?', 'id': 2
-    },
-    {
-        'texto': 'programas?', 'id': 3
-    },
-    {
-        'texto': 'quieres ser profe?', 'id': 4
-    },
-    {
-        'texto': 'cuando vas a vestirte todo fachero?', 'id': 5
-    },
-    {
-        'texto': 'manejas auto?', 'id': 6
-    },
-    {
-        'texto': 'renuevas auto?', 'id': 7
-    },
-    {
-        'texto': 'pq django es tan bkn?', 'id': 8
-    },
-]
-
-context = {
-    'preguntas': preguntas,
-}
+from page.models import Pregunta, Respuesta, Test, Test_Realizacion
 
 
 
 def home(request):
+    usuario = request.user
     ## Si el usuario que entra a la pagina no ha iniciado sesion:
-    if not request.user.is_authenticated:
+    if not usuario.is_authenticated:
         return render(request, "guest.html")
+    else:
+        userTests= Test_Realizacion.objects.filter(user=usuario)
+        if len(userTests.filter(test=Test.objects.get(id=1)))==0:
+            return redirect('/test/1')
+        elif len(userTests.filter(test=Test.objects.get(id=2)))==0:
+            return redirect('/test/2')
+        else:
+            return redirect('/resultados/')
 
 def tests(request, id):
-    return render(request, "test1.html", context)
+    test = Test.objects.get(id=id)
+    preguntas = Pregunta.objects.filter(test=test)
+    return render(request, "tests.html", {
+        'preguntas': preguntas,
+        'test': test,
+    })
 
 def resultados(request):
-    pass
+    return HttpResponse('Prueba ruta resultados')
 
 def about(request):
     pass
 
 def procesar_preguntas(request):
-    i = 1
-    de_acuerdo = 0
-    desacuerdo = 0
     if request.method == "POST":
-        for i in range(8):
-            i += 1
-            print(request.POST[f"{i}"])
-            if request.POST[f"{i}"] == "0": 
-                desacuerdo += 1
-            else:
-                de_acuerdo += 1 
-
-    print("Deacuerdo: " + str(de_acuerdo))
-    print("Desacuerdo: " + str(desacuerdo))
-    return render(request, "resultados_area.html", {
-        "valores": {
-            "de_acuerdo": de_acuerdo,
-            "desacuerdo": desacuerdo,
-        }
-    }) 
+        test = Test.objects.get(id=request.POST["testID"])
+        realizacion = Test_Realizacion(
+            user=request.user,
+            test=test,
+        )
+        realizacion.save()
+        preguntas = Pregunta.objects.filter(test=test)    
+        for pregunta in preguntas:
+            respuesta = Respuesta(
+                user=request.user,
+                pregunta=pregunta,
+                respuesta=int(request.POST[f"{pregunta.id}"]),
+                test_realizacion=realizacion,
+            )
+            respuesta.save()
+            print(respuesta.user, respuesta.pregunta, respuesta.respuesta, respuesta.test_realizacion)
+        return redirect('/')
     

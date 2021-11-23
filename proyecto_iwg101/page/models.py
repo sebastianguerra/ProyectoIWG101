@@ -29,14 +29,14 @@ class Pregunta(models.Model):
 
 class Test_Realizacion(models.Model):
     id = models.AutoField(primary_key=True)
-    fecha_inicial = models.DateField()
-    fecha_last_update = models.DateTimeField()
+    fecha_inicial = models.DateField(auto_now_add=True)
+    fecha_last_update = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
     resultado = models.ForeignKey(Area, on_delete=models.SET_NULL, null=True)
     
     def __str__(self) -> str:
-        return f"{self.fecha_inicial}"
+        return f"{self.fecha_inicial}, {self.test.nombre}"
 
 class Respuesta(models.Model):
     id = models.AutoField(primary_key=True)
@@ -46,4 +46,4 @@ class Respuesta(models.Model):
     test_realizacion = models.ForeignKey(Test_Realizacion, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
-        return f"{self.respuesta}"
+        return f"{self.user}, {self.respuesta}, {self.test_realizacion}"

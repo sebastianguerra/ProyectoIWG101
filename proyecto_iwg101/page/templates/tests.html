@@ -7,16 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <h1> {{ test.nombre }} </h1>
     <form action="/procesar_preguntas/" method="POST">
         {% csrf_token %}
+        <input type="hidden" name="testID" value="{{test.id}}">
         {% for pregunta in preguntas %}
-        <h3> {{ pregunta.texto }} </h3>
+            <h4> {{ pregunta.texto }} </h4>
             <div>
                 <input type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="1" checked>
                 <label for="a{{pregunta.id}}">Acuerdo</label>
             </div>
             <div>  
-                <input type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="0">
+                <input type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="-1">
                 <label for="c{{pregunta.id}}">Desacuerdo</label>
             </div>
         {% endfor %}
@@ -25,8 +27,3 @@
     </form>
 </body>
 </html>
-
-
-
-
-
