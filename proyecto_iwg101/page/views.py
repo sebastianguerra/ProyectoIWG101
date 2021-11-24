@@ -64,3 +64,5 @@ def procesar_preguntas(request):
             print(respuesta.user, respuesta.pregunta, respuesta.respuesta, respuesta.test_realizacion)
         return redirect('/')
     
+def register(request):
+    return HttpResponse("Prueba ruta de registro")
