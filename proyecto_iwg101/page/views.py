@@ -6,7 +6,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from page.models import Pregunta, Respuesta, Test, Test_Realizacion
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
+from .forms import UserRegisterForm
 
 
 def home(request):
@@ -23,27 +26,23 @@ def home(request):
         else:
             return redirect('/resultados/')
 
+@login_required
 def tests(request, id):
-    if request.user.is_authenticated:
-        test = Test.objects.get(id=id)
-        preguntas = Pregunta.objects.filter(test=test)
-        return render(request, "tests.html", {
-            'preguntas': preguntas,
-            'test': test,
-        })
-    else:
-        return redirect('/')
+    test = Test.objects.get(id=id)
+    preguntas = Pregunta.objects.filter(test=test)
+    return render(request, "tests.html", {
+        'preguntas': preguntas,
+        'test': test,
+    })
 
+@login_required
 def resultados(request):
     usuario = request.user
-    if usuario.is_authenticated:
-        userTests = Test_Realizacion.objects.filter(user=usuario)
-        return render(request, "resultados_area.html", {
-            "tests": userTests,
-            "testTypes": Test.objects.all(),
-        })
-    else:
-        return redirect('/')
+    userTests = Test_Realizacion.objects.filter(user=usuario)
+    return render(request, "resultados_area.html", {
+        "tests": userTests,
+        "testTypes": Test.objects.all(),
+    })
 
 def about(request):
     pass
@@ -68,3 +67,16 @@ def procesar_preguntas(request):
             print(respuesta.user, respuesta.pregunta, respuesta.respuesta, respuesta.test_realizacion)
         return redirect('/')
     
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado')
+            return redirect('index')
+    else:
+        form = UserRegisterForm()
+        
+    context = {'form': form}
+    return render(request, "registration/register.html", context)
