@@ -7,6 +7,9 @@ from django.http import HttpResponse
 
 from page.models import Pregunta, Respuesta, Test, Test_Realizacion
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+from .forms import UserRegisterForm
 
 
 def home(request):
@@ -65,4 +68,15 @@ def procesar_preguntas(request):
         return redirect('/')
     
 def register(request):
-    return HttpResponse("Prueba ruta de registro")
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado')
+            return redirect('index')
+    else:
+        form = UserRegisterForm()
+        
+    context = {'form': form}
+    return render(request, "registration/register.html", context)
