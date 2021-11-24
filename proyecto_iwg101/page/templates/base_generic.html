@@ -23,16 +23,16 @@
                 <div class="col-sm-2">
                     {% block sidebar %}
                         <ul class="sidebar-nav">
-                            <li><a href="/">Home</a></li>
 
                             {% if user.is_authenticated %}
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/test/1">Volver a realizar Test 1</a></li>
                                 <li><a href="/test/2">Volver a realizar Test 2</a></li>
                                 <li><a href="/resultados">Resultados</a></li>
                                 <li>User: {{ user.get_username }}</li>
-                                <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+                                <li><a href="{% url 'logout'%}?next={{request.path}}">Salir</a></li>
                             {% else %}
-                                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                                <li><a href="{% url 'login'%}?next={{request.path}}">Entrar</a></li>
                             {% endif %} 
 
                         </ul>
