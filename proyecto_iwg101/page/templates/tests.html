@@ -9,16 +9,28 @@
         <input type="hidden" name="testID" value="{{test.id}}">
         {% for pregunta in preguntas %}
             <h4> {{ pregunta.texto }} </h4>
+
             <div>
-                <input type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="1" checked>
-                <label for="a{{pregunta.id}}">Acuerdo</label>
+                <input type="radio" id="e{{pregunta.id}}" name="{{pregunta.id}}" value="2">
+                <label for="e{{pregunta.id}}">Muy De Acuerdo</label>
             </div>
-            <div>  
-                <input type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="-1">
-                <label for="c{{pregunta.id}}">Desacuerdo</label>
+            <div>
+                <input type="radio" id="d{{pregunta.id}}" name="{{pregunta.id}}" value="1">
+                <label for="d{{pregunta.id}}">De Acuerdo</label>
+            </div>
+            <div>
+                <input type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="0">
+                <label for="c{{pregunta.id}}">Indiferente</label>
+            </div>
+            <div>
+                <input type="radio" id="b{{pregunta.id}}" name="{{pregunta.id}}" value="-1">
+                <label for="b{{pregunta.id}}">En Desacuerdo</label>
+            </div>
+            <div>
+                <input type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="-2">
+                <label for="a{{pregunta.id}}">Muy En Desacuerdo</label>
             </div>
         {% endfor %}
-        <br>
         <button type="submit">enviar</button>
     </form>
 {% endblock %}
