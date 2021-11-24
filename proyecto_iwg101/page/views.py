@@ -56,6 +56,7 @@ def procesar_preguntas(request):
         )
         realizacion.save()
         preguntas = Pregunta.objects.filter(test=test)    
+        contador = {}  
         for pregunta in preguntas:
             respuesta = Respuesta(
                 user=request.user,
@@ -64,7 +65,13 @@ def procesar_preguntas(request):
                 test_realizacion=realizacion,
             )
             respuesta.save()
-            print(respuesta.user, respuesta.pregunta, respuesta.respuesta, respuesta.test_realizacion)
+            if not pregunta.area in contador:
+                contador[pregunta.area] = 0
+            contador[pregunta.area] += respuesta.respuesta
+        mayor = max(contador, key=lambda key: contador[key])
+        realizacion.resultado = mayor
+        realizacion.save()
+        
         return redirect('/')
     
 def register(request):
