@@ -5,3 +5,7 @@
 - Sebastian Guerra
 - jhossep Martinez
 - Lilly Guevara
+
+## ToDo
+- [ ] hacer x
+- [ ] hacer y
