@@ -18,10 +18,13 @@ from django.urls import path
 from django.urls.conf import include
 from page import urls
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(urls)),
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 #Add Django site authentication urls (for login, logout, password management)
 urlpatterns += [
