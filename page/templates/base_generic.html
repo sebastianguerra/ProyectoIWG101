@@ -11,45 +11,53 @@
 
     <!-- Add additional CSS in static file -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endcomment %}
 
     
 </head>
-    <body>
-        <div class="container-fluid">
+    <body style="background-image: url('/static/images/productive.png')">
+        <div class="container-xxl">
+            <div class="row justify-content-start">
 
-            <div class="row">
-                <div class="col-sm-2">
-                    {% block sidebar %}
-                        <ul class="sidebar-nav">
 
-                            {% if user.is_authenticated %}
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/test/1">Volver a realizar Test 1</a></li>
-                                <li><a href="/test/2">Volver a realizar Test 2</a></li>
-                                <li><a href="/resultados">Resultados</a></li>
-                                <li>User: {{ user.get_username }}</li>
-                                <li><a href="{% url 'logout'%}?next={{request.path}}">Salir</a></li>
-                            {% else %}
-                                <li><a href="{% url 'login'%}?next={{request.INFO.next}}">Entrar</a></li>
-                                <li><a href="{% url 'register'%}?next={{request.INFO.next}}">Registrarse</a></li>
-                            {% endif %} 
+                {% comment %} Bloque de la izquierda para el sidebar {% endcomment %}
+                <div class="col-md-2">
+                    <ul class="sidebar-nav">
+                        {% if user.is_authenticated %}
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/test/1">Volver a realizar Test 1</a></li>
+                            <li><a href="/test/2">Volver a realizar Test 2</a></li>
+                            <li><a href="/resultados">Resultados</a></li>
+                            <li>User: {{ user.get_username }}</li>
+                            <li><a href="{% url 'logout'%}?next={{request.path}}">Salir</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login'%}?next={{request.INFO.next}}">Entrar</a></li>
+                            <li><a href="{% url 'register'%}?next={{request.INFO.next}}">Registrarse</a></li>
+                        {% endif %} 
 
-                        </ul>
-                    {% endblock %}
+                    </ul>
                 </div>
-                <div class="col-sm-10 ">
+
+
+                {% comment %} Bloque del medio para el contenido {% endcomment %}
+                <div class="col-md-8">
+                    {% comment %} Bloque por si existen mensajes {% endcomment %}
                     {% if messages %}
                         {% for message in messages %}
-                            <div class="notification {{message.tags}}">
+                            <div class="alert alert-{{message.tags}}">
                                 {{ message }}
                             </div>
                         {% endfor %}
                     {% endif %}
+
+                    {% comment %} Contenido principal {% endcomment %}
                     {% block content %}{% endblock %}
                 </div>
-            </div>
 
+                {% comment %} Nodo para rellenar {% endcomment %}
+                <div class="col-md-2"></div>
+
+            </div>
         </div>
     </body>
 </html>
