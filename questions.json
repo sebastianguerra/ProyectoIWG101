@@ -1,0 +1,83 @@
+[
+    {
+        "texto": "Te identificas con diseñar estructuras en base a ideas que se me ocurren. ",
+        "area": "artes",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Me gusta detallar y darle contexto a lo que dibujo. ",
+        "area": "artes",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Imaginas formas y colores y los combinas armónicamente ",
+        "area": "artes",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Puedo expresar fácilmente conceptos o ideas abstractas. ",
+        "area": "artes",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto":"Trato de ser creativo en mis creaciones. ",
+        "area": "artes",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Me fijo en la sociedad e imagino como podría colaborar a ella. ",
+        "area": "artes",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Amaría tener la posibilidad de expresar lo que siento mediante obras o mi cuerpo. ",
+        "area": "artes",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Frecuento museos u obras. ",
+        "area": "artes",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Me gusta ayudar y dar soporte a las personas en problemas. ",
+        "area": "Salud",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "No Sientes pavor al ver sangre o piel expuesta ",
+        "area": "Salud",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Puedo otorgar mi atención y cercanía a amigos o personas que la necesiten. ",
+        "area": "Salud",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Soy muy paciente y las personas sienten que pueden ocurrir a mí en momentos críticos. ",
+        "area": "Salud",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Te gustaría ayudar a los enfermos en necesidad ",
+        "area": "Salud",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Siento que el ayudar en la salud de las personas es mi vocación ",
+        "area": "Salud",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Me gustaría ayudar a que las personas vuelvan a ser como antes luego de un accidente o enfermedad. ",
+        "area": "Salud",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Busco que las personas prefieran acudir al hospital si se enferman o sufren un accidente.",
+        "area": "Salud",
+        "test": "Lo que amas"
+    }
+]
+
