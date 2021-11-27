@@ -1,24 +1,35 @@
-html {
-    background-image: url("/static/blog/images/productive.png");
+body>#row {
+    background-image: url("/static/images/productive.png");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
 }
 
+
 h1 {
-    background: burlywood;
     font-weight: bold;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.container-fluid {
+#main {
+    margin-left: 200px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7266);
+    position: fixed;
+    padding-left: 10px;
+}
+
+.sidebar-nav {
+    /* float: left; */
+    z-index: 1; /* Stay on top */
+    
     height: 100%;
     width: 160px;
     position: fixed;
-    background-color: rgb(245, 204, 188);
-    overflow-x: hidden;
-    padding-top: 20px;
-    position: fixed;
-    
+    background-color: rgba(255, 255, 255, 0.7266);
+    overflow: hidden;
+    padding-top: 10px;
+
 }
