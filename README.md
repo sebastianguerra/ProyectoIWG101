@@ -5,6 +5,7 @@
 - Sebastian Guerra
 - jhossep Martinez
 - Lilly Guevara
+- Francisca Gajardo
 
 ## ToDo
 - [ ] hacer x
