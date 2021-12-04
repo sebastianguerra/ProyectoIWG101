@@ -1,0 +1,41 @@
+:root {
+    --primary: #ffffff;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content {
+    
+    height: 100vh;
+    padding-bottom: 5rem;
+}
