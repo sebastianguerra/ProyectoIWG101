@@ -2,22 +2,22 @@
     {
         "texto": "Te identificas con diseñar estructuras en base a ideas que se me ocurren. ",
         "area": "Artes",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Me gusta detallar y darle contexto a lo que dibujo. ",
         "area": "Artes",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Imaginas formas y colores y los combinas armónicamente. ",
         "area": "Artes",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Puedo expresar fácilmente conceptos o ideas abstractas. ",
         "area": "Artes",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto":"Trato de ser creativo en mis creaciones. ",
@@ -42,22 +42,22 @@
     {
         "texto": "Me gusta ayudar y dar soporte a las personas en problemas. ",
         "area": "Ciencias de la salud",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "No sientes pavor al ver sangre o piel expuesta. ",
         "area": "Ciencias de la salud",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Puedo otorgar mi atención y cercanía a amigos o personas que la necesiten. ",
         "area": "Ciencias de la salud",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Soy muy paciente y las personas sienten que pueden ocurrir a mí en momentos críticos. ",
         "area": "Ciencias de la salud",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Te gustaría ayudar a los enfermos en necesidad ",
@@ -78,6 +78,177 @@
         "texto": "Busco que las personas prefieran acudir al hospital si se enferman o sufren un accidente.",
         "area": "Ciencias de la salud",
         "test": "Lo que amas"
+    },
+ 
+    {
+        "texto": "Aplicar estrategias para dirigir personas y mejorar su desempeño laboral",
+        "area": "Ingeniería y Carreras afines",
+        "test": "En lo que eres bueno"
+    }
+    {
+        "texto": "Hacer los ejercicios numéricos necesarios para desarrollar habilidades de análisis científico",
+        "area": "Ingeniería y Carreras afines",
+        "test": "En lo que eres bueno"
+    }
+    {
+        "texto": "Evaluar proyectos de acuerdo a su planeamiento y logro de objetivos",
+        "area": "Ingeniería y Carreras afines",
+        "test": "En lo que eres bueno"
+    }
+    {
+        "texto": "Perfeccionarse en las tecnologías de punta",
+        "area": "Ingeniería y Carreras afines",
+        "test": "En lo que eres bueno"
+    }
+    {
+        "texto": "Tecnologías de información que faciliten el desarrollo y control de una empresa",
+        "area": "Ingeniería y Carreras afines",
+        "test": "Lo que amas"
+    }
+    {
+        "texto": "Realizar análisis de las características de un área geográfica y sus compuestos",
+        "area": "Ingeniería y Carreras afines",
+        "test": "Lo que amas"
+    }
+    {
+        "texto": "Las estrategias de marketing para comercialización de productos o servicios",
+        "area": "Ingeniería y Carreras afines",
+        "test": "Lo que amas"
+    }
+    {
+        "texto": "Los principios físicos de masa y energái, partículas y ondas del cosmos",
+        "area": "Ingeniería y Carreras afines",
+        "test": "Lo que amas"
+    },
+    
+
+    {
+        "texto": "Siento la necesidad de compartir con los demás lo que sé, es el modo de relacionarme que más me gusta",
+        "area": "Educacion",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Tengo facilidad en captar conceptos, busco entenderlos a fondo para expresarlo en forma simple y que sea entendible para todos",
+        "area": "Educacion",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Quiero crear un vínculo con la gente y siento que sé llegar hasta ellas",
+        "area": "Educacion",
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "Me gusta conectar con las motivaciones de otros",
+        "area": "Educacion",
+        "test": "Lo que amas"
+    },
+
+    {
+        "texto": "De pequeño jugaba a que era maestro",
+        "area": "Educacion",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Siempre me ha gustado enseñar a mis compañeros las materias que dominaba",
+        "area": "Educacion",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Me gusta captar la atención a las personas en relación a lo que quiero mostrarles",
+        "area": "Educacion",
+        "test": "Lo que eres bueno"
+    },
+    {
+        "texto": "Siento que cuando enseño es cuando más aprendo",
+        "area": "Educacion",
+        "test": "Lo que eres bueno"
+    },
+    
+    {
+        "texto": "En tu tiempo libre eligirías ver un documental sobre la historia de los países latinoamericanos ",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te gusta practicar formas de expresarse y escuchar para lograr una comunicación más efectiva ",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te interesa investigar hasta el fondo un suceso importante",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te gusta debatir con personas con opiniones distintas a la tuya",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te mantienes informado de tu deber cívico constantemente",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te ha llamado la atención escribir poemas o historias breves",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te gustan las películas y series con subtitulos",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te gusta debatir con personas con opiniones distintas a la tuya",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+    {
+        "texto": "Te gusta leer sobre diversos géneros",
+        "area": "Letras y humanidades",
+        "test": "En lo que eres bueno"
+    },
+
+    {
+        "texto":"Realizar diversos experimentos en un laboratorio con un buen manejo de las sustancias",
+        "area":"Biología y química",
+        "test":"En lo que eres bueno"
+    }
+    {
+        "texto":"Reconocer los compuestos químicos en los medicamentos que debes tomar",
+        "area":"Biología y química",
+        "test":"En lo que eres bueno"
+    }
+    {
+        "texto":"Realizar un cultivo experimental de una especie vegetal para aplicar una técnica vista en clases",
+        "area":"Biología y química",
+        "test":"En lo que eres bueno"
+    }
+    {
+        "texto":"Participar en una campaña de vacunación ante el riesgo de una epidemia",
+        "area":"Biología y química",
+        "test":"En lo que eres bueno"
+    }
+    {
+        "texto":"Investigar en un laboratorio de Microbiología el virus o bacteria causante de una enfermedad",
+        "area":"Biología y química",
+        "test": "Lo que amas",
+    }
+    {
+        "texto":"Visitar empresa forestal para com¡nocer lso procesos de laboracipon de sus productos",
+        "area":"Biología y química",
+        "test": "Lo que amas",
+    }
+    {
+        "texto":"Te llama la atención saber cómo funciona el cuerpo humano",
+        "area":"Biología y química",
+        "test": "Lo que amas",
+    }
+    {
+        "texto":"Te interesa saber de qué están hechos los medicamentos que consumes y cómo funcionan la lili es fea",
+        "area":"Biología y química",
+        "test": "Lo que amas",
     }
 ]
 
