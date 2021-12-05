@@ -2,7 +2,6 @@ from django.shortcuts import redirect, render
 
 # Create your views here.
 
-from django.shortcuts import render
 from django.http import HttpResponse
 
 from page.models import Pregunta, Respuesta, Test, Test_Realizacion
@@ -16,7 +15,9 @@ def home(request):
     usuario = request.user
     ## Si el usuario que entra a la pagina no ha iniciado sesion:
     if not usuario.is_authenticated:
-        return render(request, "guest.html")
+        return render(request, "guest.html", {
+            "testTypes": Test.objects.all(),
+        })
     else:
         userTests= Test_Realizacion.objects.filter(user=usuario)
         tests = Test.objects.all()
@@ -32,6 +33,7 @@ def tests(request, id):
     return render(request, "tests.html", {
         'preguntas': preguntas,
         'test': test,
+        'testTypes': Test.objects.all(),
     })
 
 @login_required
@@ -84,5 +86,6 @@ def register(request):
     else:
         form = UserRegisterForm()
         
-    context = {'form': form}
-    return render(request, "registration/register.html", context)
+    return render(request, "registration/register.html", {
+        'form': form, 'testTypes': Test.objects.all(),
+    })
