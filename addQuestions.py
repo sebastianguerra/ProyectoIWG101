@@ -32,7 +32,7 @@ if __name__ == "__main__":
     print()
     print(f"IMPORTANDO ARCHIVO '{nombreArchivoJson}'")
     try:
-        with open(nombreArchivoJson) as f:
+        with open(nombreArchivoJson, encoding="utf-8") as f:
             questions_json = json.load(f)
     except FileNotFoundError:
         print(f"El archivo '{nombreArchivoJson}' no existe en este directorio")
