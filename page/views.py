@@ -19,12 +19,11 @@ def home(request):
         return render(request, "guest.html")
     else:
         userTests= Test_Realizacion.objects.filter(user=usuario)
-        if len(userTests.filter(test=Test.objects.get(id=1)))==0:
-            return redirect('/test/1')
-        elif len(userTests.filter(test=Test.objects.get(id=2)))==0:
-            return redirect('/test/2')
-        else:
-            return redirect('/resultados/')
+        tests = Test.objects.all()
+        for test in tests:
+            if len(userTests.filter(test=test))==0:
+                return redirect(f"/test/{test.id}")
+    return redirect('/resultados/')
 
 @login_required
 def tests(request, id):
