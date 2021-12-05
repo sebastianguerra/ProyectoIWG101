@@ -4,6 +4,52 @@
 
 {% block content %}
     <h1>Resultados</h1>
+
+    {% comment %} Grafico {% endcomment %}
+
+    <canvas id="Chart" width="600" height="400"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"></script>
+
+    <script>
+        var Canvas = document.getElementById("Chart");
+
+        var marksData = {
+            labels: [
+                {% for area in Areas %}
+                    "{{area}}",
+                {% endfor %}
+            ],
+            datasets: [
+                {% for testType in testTypes %}
+                    {
+                        label: "{{testType.nombre}}",
+                        backgroundColor: "rgba(200,0,0,0.2)",
+                        data: [
+                            {% for area in Areas %}
+                                {% for Respuesta in Respuestas_tests %}
+                                    {% if Respuesta.pregunta.area.nombre == area.nombre %}
+                                        {% if Respuesta.pregunta.test.nombre == testType.nombre %}
+                                            {{Respuesta.respuesta}}+
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                            0,
+                        ]
+                    },
+                {% endfor %}
+            ]
+        };
+
+        var radarChart = new Chart(Canvas, {
+            type: 'radar',
+            data: marksData,
+        });
+    </script>
+
+
+
+    {% comment %} Test previos {% endcomment %}
     {% for testType in testTypes %}
         <h3> {{testType}} </h3>
         {% for test in tests %}

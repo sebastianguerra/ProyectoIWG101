@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 
 from django.http import HttpResponse
 
-from page.models import Pregunta, Respuesta, Test, Test_Realizacion
+from page.models import Area, Pregunta, Respuesta, Test, Test_Realizacion
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -39,10 +39,27 @@ def tests(request, id):
 @login_required
 def resultados(request):
     usuario = request.user
+    
     userTests = Test_Realizacion.objects.filter(user=usuario)
+    testTypes = Test.objects.all()
+    Areas = Area.objects.all()
+
+    respuestasUsuario = Respuesta.objects \
+        .filter(user=usuario)
+    
+    Respuestas_tests = respuestasUsuario \
+        .filter(test_realizacion=Test_Realizacion.objects \
+            .filter(user=usuario)
+            .order_by('-fecha_inicial')[0]
+        )
+    print(Respuestas_tests)
     return render(request, "resultados_area.html", {
         "tests": userTests,
-        "testTypes": Test.objects.all(),
+        "testTypes": testTypes,
+        "Areas": Areas,
+        "Respuestas": respuestasUsuario,
+        "Preguntas": Pregunta.objects.all(),
+        "Respuestas_tests": Respuestas_tests,
     })
 
 def about(request):
