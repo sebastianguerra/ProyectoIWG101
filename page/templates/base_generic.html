@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
+        <meta charset=utf-8>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock %}</title>
@@ -78,10 +78,10 @@
                     <h4 class="text-dark font-weight-bold">IKIGAI</h4>
                 </div>
                 <div class="menu">
-                    <a href="#" class="d-block p-3 text-dark"><i class="icon ion-md-podium lead me-2"></i> Resultados</a>
-                    <a href="#" class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> Test 1</a>
-                    <a href="#" class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> Test 2</a>
-                    <a href="#" class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> Iniciar sesion</a>
+                    <a href="/resultados" class="d-block p-3 text-dark"><i class="icon ion-md-podium lead me-2"></i> Resultados</a>
+                    <a href="/test/1" class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> Test 1</a>
+                    <a href="/test/2" class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> Test 2</a>
+                    <a class="d-block p-3 text-dark"><i class="icon ion-md-document lead me-2"></i> User: {{ user.get_username }}</a>
                 </div>
             </div>
             <!-- Fin Sidebar -->
@@ -93,9 +93,6 @@
                         <div class="row">
                             <div class="col-lg-9 text-dark">
                                 {% block content %}{% endblock %}
-                            </div>
-                            <div class="col-lg-3">
-
                             </div>
                         </div>
                     </div>

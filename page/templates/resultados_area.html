@@ -3,7 +3,7 @@
 {% block title %}Resultados{% endblock %} 
 
 {% block content %}
-    <h1>Resultados</h1>
+    <!-- <h1>Resultados</h1>
     {% for testType in testTypes %}
         <h3> {{testType}} </h3>
         {% for test in tests %}
@@ -14,5 +14,17 @@
                 </details>
             {% endifequal %}
         {% endfor %}
+    {% endfor %} -->
+    {% for testType in testTypes %}
+        <div class="card p-3">
+            <div class="card-body">
+                <h3 class="card-title"> {{testType}} </h3>
+                {% for test in tests %}
+                    {% ifequal testType test.test %}    
+                        <p class="card-text" >{{test}}: {{test.resultado}}</p>
+                    {% endifequal %}
+                {% endfor %}
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
