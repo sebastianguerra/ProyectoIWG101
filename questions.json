@@ -84,37 +84,37 @@
         "texto": "Aplicar estrategias para dirigir personas y mejorar su desempeño laboral",
         "area": "Ingeniería y Carreras afines",
         "test": "En lo que eres bueno"
-    }
+    },
     {
         "texto": "Hacer los ejercicios numéricos necesarios para desarrollar habilidades de análisis científico",
         "area": "Ingeniería y Carreras afines",
         "test": "En lo que eres bueno"
-    }
+    },
     {
         "texto": "Evaluar proyectos de acuerdo a su planeamiento y logro de objetivos",
         "area": "Ingeniería y Carreras afines",
         "test": "En lo que eres bueno"
-    }
+    },
     {
         "texto": "Perfeccionarse en las tecnologías de punta",
         "area": "Ingeniería y Carreras afines",
         "test": "En lo que eres bueno"
-    }
+    },
     {
         "texto": "Tecnologías de información que faciliten el desarrollo y control de una empresa",
         "area": "Ingeniería y Carreras afines",
         "test": "Lo que amas"
-    }
+    },
     {
         "texto": "Realizar análisis de las características de un área geográfica y sus compuestos",
         "area": "Ingeniería y Carreras afines",
         "test": "Lo que amas"
-    }
+    },
     {
         "texto": "Las estrategias de marketing para comercialización de productos o servicios",
         "area": "Ingeniería y Carreras afines",
         "test": "Lo que amas"
-    }
+    },
     {
         "texto": "Los principios físicos de masa y energái, partículas y ondas del cosmos",
         "area": "Ingeniería y Carreras afines",
@@ -146,22 +146,22 @@
     {
         "texto": "De pequeño jugaba a que era maestro",
         "area": "Educacion",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Siempre me ha gustado enseñar a mis compañeros las materias que dominaba",
         "area": "Educacion",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Me gusta captar la atención a las personas en relación a lo que quiero mostrarles",
         "area": "Educacion",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     {
         "texto": "Siento que cuando enseño es cuando más aprendo",
         "area": "Educacion",
-        "test": "Lo que eres bueno"
+        "test": "En lo que eres bueno"
     },
     
     {
@@ -214,41 +214,41 @@
         "texto":"Realizar diversos experimentos en un laboratorio con un buen manejo de las sustancias",
         "area":"Biología y química",
         "test":"En lo que eres bueno"
-    }
+    },
     {
         "texto":"Reconocer los compuestos químicos en los medicamentos que debes tomar",
         "area":"Biología y química",
         "test":"En lo que eres bueno"
-    }
+    },
     {
         "texto":"Realizar un cultivo experimental de una especie vegetal para aplicar una técnica vista en clases",
         "area":"Biología y química",
         "test":"En lo que eres bueno"
-    }
+    },
     {
         "texto":"Participar en una campaña de vacunación ante el riesgo de una epidemia",
         "area":"Biología y química",
         "test":"En lo que eres bueno"
-    }
+    },
     {
         "texto":"Investigar en un laboratorio de Microbiología el virus o bacteria causante de una enfermedad",
         "area":"Biología y química",
-        "test": "Lo que amas",
-    }
+        "test": "Lo que amas"
+    },
     {
         "texto":"Visitar empresa forestal para com¡nocer lso procesos de laboracipon de sus productos",
         "area":"Biología y química",
-        "test": "Lo que amas",
-    }
+        "test": "Lo que amas"
+    },
     {
         "texto":"Te llama la atención saber cómo funciona el cuerpo humano",
         "area":"Biología y química",
-        "test": "Lo que amas",
-    }
+        "test": "Lo que amas"
+    },
     {
         "texto":"Te interesa saber de qué están hechos los medicamentos que consumes y cómo funcionan la lili es fea",
         "area":"Biología y química",
-        "test": "Lo que amas",
+        "test": "Lo que amas"
     }
 ]
 
