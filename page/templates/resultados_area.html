@@ -23,18 +23,22 @@
                 {% for testType in testTypes %}
                     {
                         label: "{{testType.nombre}}",
-                        backgroundColor: "rgba(200,0,0,0.2)",
+                        {% for nombre, color in Colores.items %}
+                            {% if nombre == testType.nombre %}
+                                backgroundColor: "{{color}}",
+                            {% endif %}
+                        {% endfor %}
                         data: [
                             {% for area in Areas %}
                                 {% for Respuesta in Respuestas_tests %}
-                                    {% if Respuesta.pregunta.area.nombre == area.nombre %}
-                                        {% if Respuesta.pregunta.test.nombre == testType.nombre %}
+                                    {% if Respuesta.pregunta.area.id == area.id %}
+                                        {% if Respuesta.pregunta.test.id == testType.id %}
                                             {{Respuesta.respuesta}}+
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
+                                0,
                             {% endfor %}
-                            0,
                         ]
                     },
                 {% endfor %}

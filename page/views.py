@@ -47,12 +47,15 @@ def resultados(request):
     respuestasUsuario = Respuesta.objects \
         .filter(user=usuario)
     
-    Respuestas_tests = respuestasUsuario \
-        .filter(test_realizacion=Test_Realizacion.objects \
-            .filter(user=usuario)
-            .order_by('-fecha_inicial')[0]
-        )
-    print(Respuestas_tests)
+    Respuestas_tests = []
+    for test in testTypes:
+        Respuestas_tests += list(respuestasUsuario \
+            .filter(test_realizacion=Test_Realizacion.objects \
+                .filter(user=usuario)
+                .filter(test=test)
+                .order_by('-fecha_inicial')[0]
+            ))
+
     return render(request, "resultados_area.html", {
         "tests": userTests,
         "testTypes": testTypes,
@@ -60,6 +63,10 @@ def resultados(request):
         "Respuestas": respuestasUsuario,
         "Preguntas": Pregunta.objects.all(),
         "Respuestas_tests": Respuestas_tests,
+        "Colores": {
+            "En lo que eres bueno": "rgba(0,0,200,0.2)",
+            "Lo que amas": "rgba(200,0,0,0.2)",
+        },
     })
 
 def about(request):
