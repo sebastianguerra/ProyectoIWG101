@@ -165,11 +165,6 @@
     },
     
     {
-        "texto": "En tu tiempo libre eligirías ver un documental sobre la historia de los países latinoamericanos ",
-        "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
-    },
-    {
         "texto": "Te gusta practicar formas de expresarse y escuchar para lograr una comunicación más efectiva ",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
@@ -200,12 +195,12 @@
         "test": "En lo que eres bueno"
     },
     {
-        "texto": "Te gusta debatir con personas con opiniones distintas a la tuya",
+        "texto": "Te gusta leer sobre diversos géneros",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
     },
     {
-        "texto": "Te gusta leer sobre diversos géneros",
+        "texto": "En tu tiempo libre eligirías ver un documental sobre la historia de los países latinoamericanos ",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
     },
