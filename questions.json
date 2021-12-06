@@ -165,22 +165,17 @@
     },
     
     {
-        "texto": "En tu tiempo libre eligirías ver un documental sobre la historia de los países latinoamericanos ",
+        "texto": "Practicar formas de expresarse y escuchar para lograr una comunicación más efectiva ",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
     },
     {
-        "texto": "Te gusta practicar formas de expresarse y escuchar para lograr una comunicación más efectiva ",
+        "texto": "Investigar hasta el fondo un suceso importante",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
     },
     {
-        "texto": "Te interesa investigar hasta el fondo un suceso importante",
-        "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
-    },
-    {
-        "texto": "Te gusta debatir con personas con opiniones distintas a la tuya",
+        "texto": "Debatir con personas con opiniones distintas a la tuya",
         "area": "Letras y humanidades",
         "test": "En lo que eres bueno"
     },
@@ -192,22 +187,22 @@
     {
         "texto": "Te ha llamado la atención escribir poemas o historias breves",
         "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
+        "test": "Lo que amas"
     },
     {
         "texto": "Te gustan las películas y series con subtitulos",
         "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
-    },
-    {
-        "texto": "Te gusta debatir con personas con opiniones distintas a la tuya",
-        "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
+        "test": "Lo que amas"
     },
     {
         "texto": "Te gusta leer sobre diversos géneros",
         "area": "Letras y humanidades",
-        "test": "En lo que eres bueno"
+        "test": "Lo que amas"
+    },
+    {
+        "texto": "En tu tiempo libre eligirías ver un documental sobre la historia de los países latinoamericanos ",
+        "area": "Letras y humanidades",
+        "test": "Lo que amas"
     },
 
     {
