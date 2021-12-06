@@ -39,3 +39,16 @@ a:hover {
     height: 100vh;
     padding-bottom: 5rem;
 }
+
+.card-results:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 1s;
+}
+
+.card-1:hover{
+    background-color: rgb(204, 204, 244);
+}
+
+.card-2:hover{
+    background-color: rgb(244, 204, 204);
+}
