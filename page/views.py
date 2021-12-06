@@ -57,7 +57,7 @@ def resultados(request):
             .filter(test_realizacion=test))
 
     return render(request, "resultados_area.html", {
-        "tests": reversed(userTests) ,
+        "tests": userTests ,
         "testTypes": testTypes,
         "Areas": Areas,
         "Respuestas": respuestasUsuario,
