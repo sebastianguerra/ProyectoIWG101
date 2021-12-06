@@ -5,9 +5,12 @@
 }
 
 body {
+    background-image: url('/static/images/productive.png');
+    background-attachment: fixed;
     font-family: 'Mulish', sans-serif;
     font-weight: 300;
     color: var(--primary);
+    background-repeat: no-repeat;
 }
 
 a {
@@ -43,13 +46,26 @@ a:hover {
 
 .card-results:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-    transition: 1s;
+    transition: 0.7s;
 }
 
-.card-1:hover{
+.card-5:hover{
     background-color: rgb(204, 204, 244);
 }
 
-.card-2:hover{
+.card-6:hover{
     background-color: rgb(244, 204, 204);
 }
+
+.card-test {
+    background-color: rgba(255, 255, 255, 0.74);
+    transition: 0.7s;
+}
+
+.card-test:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 0.7s;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+

@@ -3,39 +3,41 @@
 {% block title %}Test {{test.id}}{% endblock %}
 
 {% block content %}
-    <h1> {{ test.nombre }} </h1>
-    <form action="/procesar_preguntas/" method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="testID" value="{{test.id}}">
-        {% for pregunta in preguntas %}
-            <div class="card p-3">
-                <div class="card-body text-dark">
-                    <div class="card-title">{{ pregunta.texto }}</div>
-                    <div class="form-check">
-                        <div>
-                            <input class="form-check-input" type="radio" id="e{{pregunta.id}}" name="{{pregunta.id}}" value="2">
-                            <label for="e{{pregunta.id}}">Muy de acuerdo</label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="d{{pregunta.id}}" name="{{pregunta.id}}" value="1">
-                            <label for="d{{pregunta.id}}">De acuerdo</label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" checked="checked" type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="0">
-                            <label for="c{{pregunta.id}}">Indiferente</label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="b{{pregunta.id}}" name="{{pregunta.id}}" value="-1">
-                            <label for="b{{pregunta.id}}">En desacuerdo</label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="-2">
-                            <label for="a{{pregunta.id}}">Muy en desacuerdo</label>
+    <div class="w-75">
+        <h1> {{ test.nombre }} </h1>
+        <form action="/procesar_preguntas/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="testID" value="{{test.id}}">
+            {% for pregunta in preguntas %}
+                <div class="card p-3 mt-3 card-test">
+                    <div class="card-body text-dark ">
+                        <div class="card-title">{{ pregunta.texto }}</div>
+                        <div class="form-check">
+                            <div>
+                                <input class="form-check-input" type="radio" id="e{{pregunta.id}}" name="{{pregunta.id}}" value="2">
+                                <label for="e{{pregunta.id}}">Muy de acuerdo</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="radio" id="d{{pregunta.id}}" name="{{pregunta.id}}" value="1">
+                                <label for="d{{pregunta.id}}">De acuerdo</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" checked="checked" type="radio" id="c{{pregunta.id}}" name="{{pregunta.id}}" value="0">
+                                <label for="c{{pregunta.id}}">Indiferente</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="radio" id="b{{pregunta.id}}" name="{{pregunta.id}}" value="-1">
+                                <label for="b{{pregunta.id}}">En desacuerdo</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="radio" id="a{{pregunta.id}}" name="{{pregunta.id}}" value="-2">
+                                <label for="a{{pregunta.id}}">Muy en desacuerdo</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-        <button type="submit">enviar</button>
-    </form>
+            {% endfor %}
+            <button type="submit">enviar</button>
+        </form>
+    </div>
 {% endblock %}
