@@ -27,7 +27,7 @@
 
         
     </head>
-    <body style="background-image: url('/static/images/productive.png')">
+    <body>
         <div class="d-flex">
             <!-- Sidebar -->
             <div id="sidebar-container" class="bg-primary shadow">
@@ -50,17 +50,19 @@
             <!-- Fin Sidebar -->
             
             <!-- content -->
-            <div id="content">
-                <section class="py-3">
-                    <div class="container text-dark">
-                                {% block content %}{% endblock %}
-                            
+            <div class="col d-flex justify-content-center">
+                <div id="content" class="">
+                    <section class="py-3">
+                        <div class="container text-dark">
+                                    {% block content %}{% endblock %}
+                                
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
+                <!-- Fin content -->
             </div>
-            <!-- Fin content -->
 
 
         </div>
