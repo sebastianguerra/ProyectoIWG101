@@ -53,7 +53,7 @@ def resultados(request):
             .filter(test_realizacion=Test_Realizacion.objects \
                 .filter(user=usuario)
                 .filter(test=test)
-                .order_by('-fecha_inicial')[0]
+                .last()
             ))
 
     return render(request, "resultados_area.html", {
