@@ -59,20 +59,22 @@
             <summary>
                 <div class="card p-3">
                     <div class="card-body">
-                        <h3 class="card-title"> {{testType}} </h3>
-                        {% for test in tests %}
+                        <h3 class="card-title"> {{testType.nombre}} </h3>
+                        {% for test in ultimosTestsUsuario %}
                             {% ifequal testType test.test %}    
-                                <p class="card-text" >{{test}}: {{test.resultado}}</p>
+                                <p class="card-text" >{{test.resultado}}</p>
                             {% endifequal %}
                         {% endfor %}
                     </div>
                 </div>
             </summary>
+            <ul>
             {% for test in tests %}
                 {% ifequal testType test.test %}
-                    {{test}}: {{test.resultado}}
+                    <li><a href="#"> {{test}}: {{test.resultado}} </a></li>
                 {% endifequal %}
             {% endfor %}
+            </ul>
         </details>
     {% endfor %}
 {% endblock %}
