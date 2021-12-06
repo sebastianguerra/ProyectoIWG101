@@ -55,14 +55,26 @@
 
     {% comment %} Test previos {% endcomment %}
     {% for testType in testTypes %}
-        <h3> {{testType}} </h3>
-        {% for test in tests %}
-            {% ifequal testType test.test %}
-                <details>
-                    <summary>{{test}}: {{test.resultado}}</summary>
-                    a
-                </details>
-            {% endifequal %}
-        {% endfor %}
+        <details>
+            <summary>
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> {{testType.nombre}} </h3>
+                        {% for test in ultimosTestsUsuario %}
+                            {% ifequal testType test.test %}    
+                                <p class="card-text" >{{test.resultado}}</p>
+                            {% endifequal %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </summary>
+            <ul>
+            {% for test in tests %}
+                {% ifequal testType test.test %}
+                    <li><a href="#"> {{test}}: {{test.resultado}} </a></li>
+                {% endifequal %}
+            {% endfor %}
+            </ul>
+        </details>
     {% endfor %}
 {% endblock %}

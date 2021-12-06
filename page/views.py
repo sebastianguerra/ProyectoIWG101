@@ -47,17 +47,17 @@ def resultados(request):
     respuestasUsuario = Respuesta.objects \
         .filter(user=usuario)
     
-    Respuestas_tests = []
+    ultimosTestsUsuario = []
     for test in testTypes:
+        ultimosTestsUsuario.append(Test_Realizacion.objects.filter(user=usuario).filter(test=test).last())
+    
+    Respuestas_tests = []
+    for test in ultimosTestsUsuario:
         Respuestas_tests += list(respuestasUsuario \
-            .filter(test_realizacion=Test_Realizacion.objects \
-                .filter(user=usuario)
-                .filter(test=test)
-                .order_by('-fecha_inicial')[0]
-            ))
+            .filter(test_realizacion=test))
 
     return render(request, "resultados_area.html", {
-        "tests": userTests,
+        "tests": userTests ,
         "testTypes": testTypes,
         "Areas": Areas,
         "Respuestas": respuestasUsuario,
@@ -67,6 +67,7 @@ def resultados(request):
             "En lo que eres bueno": "rgba(0,0,200,0.2)",
             "Lo que amas": "rgba(200,0,0,0.2)",
         },
+        "ultimosTestsUsuario": ultimosTestsUsuario,
     })
 
 def about(request):
