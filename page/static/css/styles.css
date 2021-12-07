@@ -23,13 +23,16 @@ h1 {
 
 .sidebar-nav {
     /* float: left; */
-    z-index: 1; /* Stay on top */
+    z-index: 1; /* Stay on bottom */
     
     height: 100%;
-    width: 160px;
+    width: 0;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.7266);
-    overflow: hidden;
-    padding-top: 10px;
+    background-color: #b6c9a9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    top: 0;
+    left: 0;
 
+    transition: 0.5s; /*Transition of collapse*/
 }
