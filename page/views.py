@@ -36,6 +36,26 @@ def tests(request, id):
         'testTypes': Test.objects.all(),
     })
 
+
+datos = [
+    {
+        "area": "Artes",
+    "carreras": ["Teatro", "Arquitectura", "Cine", "Diseño Grafico", "Musica"]
+    },
+    {
+        "area": "Ciencias de la salud",
+    "carreras": ["Enfermeria", "Medicina", "Kinesiologia", "Obstetricia", "Odontologia"]
+    },
+    {
+        "area": "Ingenieria y Carreras afines",
+    "carreras": ["Ingenieria plan comun", "ingenieria en computacion e informatica", "Ingenieria en fisica"]
+    },
+    {
+        "area": "Biología y química",
+    "carreras": ["Biologia", "Biotecnologia", "Quimica y farmacia"]
+    },
+]
+
 @login_required
 def resultados(request):
     usuario = request.user
@@ -68,6 +88,7 @@ def resultados(request):
             "Lo que amas": "rgba(200,0,0,0.2)",
         },
         "ultimosTestsUsuario": ultimosTestsUsuario,
+        "datos": datos,
     })
 
 def about(request):

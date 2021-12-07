@@ -60,10 +60,22 @@
             <details>
                 <summary class="card mt-3 card-results card-{{testType.id}}">
                     <div class="card-body">
-                        <h3 class="card-title"> {{testType.nombre}}</h3>
+                        <h3 class="card-title text-muted"> {{testType.nombre}}</h3>
                         {% for test in ultimosTestsUsuario %}
-                            {% ifequal testType test.test %}    
-                                <p class="card-text" >{{test.resultado}}</p>
+                            {% ifequal testType test.test %}   
+                                <h1 class="card-text" >{{test.resultado}}</h1>
+                                
+                                {% for dato in datos %}
+                                    {% ifequal test.resultado.nombre dato.area %}
+                                        {% for carrera in dato.carreras %}
+                                            <div>
+                                                <h4>{{carrera}}</h4>
+                                            </div>
+                                        {% endfor %}
+                                    {% endifequal %}
+                                {% endfor %}
+                                
+                                
                             {% endifequal %}
                         {% endfor %}
                     </div>
@@ -77,5 +89,7 @@
                 </ul>
             </details>
         {% endfor %}
+        
+        
     </div>
 {% endblock %}
