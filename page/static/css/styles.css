@@ -12,6 +12,7 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/*
 #main {
     margin-left: 200px;
     margin-top: 10px;
@@ -20,8 +21,9 @@ h1 {
     position: fixed;
     padding-left: 10px;
 }
+*/
 
-.sidebar-nav {
+.sidebar {
     /* float: left; */
     z-index: 1; /* Stay on bottom */
     

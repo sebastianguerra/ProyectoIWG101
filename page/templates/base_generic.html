@@ -41,7 +41,7 @@
                     {% for test in testTypes %}                            <a href="/test/{{test.id}}"><i class="icon ion-md-document lead me-2"></i> Test: {{test.nombre}} </a>
                     {% endfor %}
                     <!--Logout-->
-                    <amini href="{% url 'logout'%}">Salir</strong> </amini>
+                    <a href="{% url 'logout'%}">Salir</strong></a>
                 {% else %}
                     <a href="{% url 'login' %}"><i class="icon ion-md-document lead me-2"></i> Iniciar sesion</a>
                     <a href="{% url 'register' %}"><i class="icon ion-md-document lead me-2"></i> Crear cuenta </a>
