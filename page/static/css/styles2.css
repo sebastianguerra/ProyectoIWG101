@@ -65,7 +65,19 @@ a:hover {
 .card-test:hover {
     background-color: rgb(255, 255, 255);
     transition: 0.7s;
-
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
+.carrera:hover {
+    color: rgb(51, 176, 214);
+    transition: 0.5s;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+  }
+  
+  @keyframes sweep {
+    0%    {opacity: 0; transform: translateX(-10px)}
+    100%  {opacity: 1; transform: translateX(0)}
+  }
