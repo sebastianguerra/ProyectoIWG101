@@ -67,9 +67,19 @@
                                 
                                 {% for dato in datos %}
                                     {% ifequal test.resultado.nombre dato.area %}
+                                        {{dato.mensaje}}
                                         {% for carrera in dato.carreras %}
                                             <div class="p-1">
-                                                <p>{{ carrera }}</p>
+                                                <details>
+                                                    <summary>{{ carrera }}</summary>
+                                                    {%for valor in datos2%}
+                                                        {%ifequal carrera valor.carrera%}
+                                                            {{valor.ingresos}}
+                                                        {%endifequal%}
+                                                    {% endfor %}
+                                                    
+                                                </details>
+                                    
                                             </div>
                                         {% endfor %}
                                     {% endifequal %}
@@ -92,9 +102,15 @@
                         </p>
                     </details>
                 </div>
-            
-        {% endfor %}
         
+        {% endfor %}
+
+        <div class="card mundo p-3">
+            <h3>Lo que el mundo necesita</h3>
+            <p>
+                
+            </p>
+        </div>
         
     </div>
 {% endblock %}
