@@ -57,7 +57,7 @@
     {% comment %} Test previos {% endcomment %}
     <div>
         {% for testType in testTypes %}
-            <details>
+            
                 <summary class="card mt-3 card-results card-{{testType.id}}">
                     <div class="card-body">
                         <h3 class="card-title text-muted"> {{testType.nombre}}</h3>
@@ -68,8 +68,8 @@
                                 {% for dato in datos %}
                                     {% ifequal test.resultado.nombre dato.area %}
                                         {% for carrera in dato.carreras %}
-                                            <div>
-                                                <h4>{{carrera}}</h4>
+                                            <div class="p-1">
+                                                <p>{{ carrera }}</p>
                                             </div>
                                         {% endfor %}
                                     {% endifequal %}
@@ -80,14 +80,19 @@
                         {% endfor %}
                     </div>
                 </summary>
-                <ul>
-                {% for test in tests %}
-                    {% ifequal testType test.test %}
-                        <li><a href="#"> {{test}}: {{test.resultado}} </a></li>
-                    {% endifequal %}
-                {% endfor %}
-                </ul>
-            </details>
+                <div class="card mb-2 p-3">
+                    <details>
+                        <summary>Historial</summary>
+                        <p>
+                        {% for test in tests %}
+                            {% ifequal testType test.test %}
+                                <li><a href="#"> {{test}}: {{test.resultado}} </a></li>
+                            {% endifequal %}
+                        {% endfor %}
+                        </p>
+                    </details>
+                </div>
+            
         {% endfor %}
         
         
