@@ -8,7 +8,7 @@
     {% comment %} Grafico {% endcomment %}
 
     <div class="">
-        <canvas id="Chart" width="600" height="490" class="card"></canvas>
+        <canvas id="Chart" class="card"></canvas>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"></script>
         <script>
             var Canvas = document.getElementById("Chart");
@@ -58,7 +58,7 @@
     <div>
         {% for testType in testTypes %}
             
-                <summary class="card mt-3 card-results card-{{testType.id}}">
+                <div class="card mt-3 card-results card-{{testType.id}}">
                     <div class="card-body">
                         <h3 class="card-title text-muted"> {{testType.nombre}}</h3>
                         {% for test in ultimosTestsUsuario %}
@@ -89,7 +89,7 @@
                             {% endifequal %}
                         {% endfor %}
                     </div>
-                </summary>
+                </div>
                 <div class="card mb-2 p-3">
                     <details>
                         <summary>Historial</summary>
