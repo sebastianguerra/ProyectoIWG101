@@ -78,12 +78,25 @@ WSGI_APPLICATION = 'proyecto_iwg101.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+if "DATABASE" in os.environ:
+    if os.environ.get("DATABASE") == "mongo":
+        DATABASES = {
+            'default': {
+                'ENGINE': 'djongo',
+                'NAME': 'iwg101',
+                'ENFORCE_SCHEMA': False,
+                'CLIENT': {
+                    'host': os.environ.get("DATABASE_URI")
+                }  
+            }
+        }
 
 
 # Password validation
