@@ -3,15 +3,16 @@
 {% block title %}Test {{test.id}}{% endblock %}
 
 {% block content %}
-    <div class="w-75">
+    <div class="test">
         <h1> {{ test.nombre }} </h1>
         <form action="/procesar_preguntas/" method="POST">
             {% csrf_token %}
             <input type="hidden" name="testID" value="{{test.id}}">
             {% for pregunta in preguntas %}
                 <div class="card p-3 mt-3 card-test">
-                    <div class="card-body text-dark ">
-                        <div class="card-title">{{ pregunta.texto }}</div>
+                    <div class="card-body text-dark">
+                        <div class="card-title"><h3>{{ pregunta.texto }}</h3></div>
+                        <hr>
                         <div class="form-check">
                             <div>
                                 <input class="form-check-input" type="radio" id="e{{pregunta.id}}" name="{{pregunta.id}}" value="2">
@@ -37,7 +38,9 @@
                     </div>
                 </div>
             {% endfor %}
-            <button type="submit">enviar</button>
+            <div>
+                <button type="submit" class="btn btn-success w-100 mt-3">enviar</button>
+            </div>
         </form>
     </div>
 {% endblock %}
