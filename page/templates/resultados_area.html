@@ -74,7 +74,7 @@
                                                     <summary>{{ carrera }}</summary>
                                                     {%for valor in datos2%}
                                                         {%ifequal carrera valor.carrera%}
-                                                            {{valor.ingresos}}
+                                                            <p class="carrera-ingreso">El ingreso promedio es de: {{valor.ingresos}}</p>
                                                         {%endifequal%}
                                                     {% endfor %}
                                                     
@@ -104,13 +104,5 @@
                 </div>
         
         {% endfor %}
-
-        <div class="card mundo p-3">
-            <h3>Lo que el mundo necesita</h3>
-            <p>
-                
-            </p>
-        </div>
-        
     </div>
 {% endblock %}
