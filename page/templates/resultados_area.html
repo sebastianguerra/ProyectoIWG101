@@ -3,7 +3,7 @@
 {% block title %}Resultados{% endblock %} 
 
 {% block content %}
-    <h1>Resultados</h1>
+    <h1 class="card p-3">Resultados</h1>    
 
     {% comment %} Grafico {% endcomment %}
 
@@ -53,9 +53,9 @@
     </div>
 
 
-
     {% comment %} Test previos {% endcomment %}
     <div>
+        
         {% for testType in testTypes %}
             
                 <summary class="card mt-3 card-results card-{{testType.id}}">
@@ -105,12 +105,6 @@
         
         {% endfor %}
 
-        <div class="card mundo p-3">
-            <h3>Lo que el mundo necesita</h3>
-            <p>
-                
-            </p>
-        </div>
         
     </div>
 {% endblock %}

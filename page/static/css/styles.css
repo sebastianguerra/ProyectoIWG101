@@ -40,6 +40,14 @@ body {
     color: #f1f1f1;
 }
 
+.btn-background {
+    background-color: #6d875bb7;
+}
+.btn-background:hover {
+    background-color: #6d875b;
+    transition: 2s;
+}
+
 #logout {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -86,9 +94,15 @@ body {
 }
 
 #content {
-    margin-left: 300px;
+    margin-left: 150px;
     height: 100vh;
     padding-bottom: 5rem;
+}
+
+.card-results {
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 0.7s;
+    background-color: #ffffffbe;
 }
 
 .card-results:hover {
