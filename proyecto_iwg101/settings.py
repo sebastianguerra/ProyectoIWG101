@@ -81,14 +81,22 @@ WSGI_APPLICATION = 'proyecto_iwg101.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'iwg101',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': os.environ.get("DATABASE_URI")
-        }  
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+if "DATABASE" in os.environ:
+    if os.environ.get("DATABASE") == "mongo":
+        DATABASES = {
+            'default': {
+                'ENGINE': 'djongo',
+                'NAME': 'iwg101',
+                'ENFORCE_SCHEMA': False,
+                'CLIENT': {
+                    'host': os.environ.get("DATABASE_URI")
+                }  
+            }
+        }
 
 
 # Password validation
