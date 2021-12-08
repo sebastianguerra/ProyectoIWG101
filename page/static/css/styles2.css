@@ -57,6 +57,10 @@ a:hover {
     background-color: rgb(244, 204, 204);
 }
 
+.test {
+    width: 35em;
+}
+
 .card-test {
     background-color: rgba(255, 255, 255, 0.74);
     transition: 0.7s;
