@@ -1,35 +1,117 @@
-body>#row {
-    background-image: url("/static/images/productive.png");
-    background-position: center;
+:root {
+    --primary: #ffffff;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body {
+    background-image: url('/static/images/productive.png');
     background-attachment: fixed;
-    background-size: cover;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+    background-repeat: no-repeat;
 }
 
-
-h1 {
-    font-weight: bold;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-#main {
-    margin-left: 200px;
-    margin-top: 10px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.7266);
-    position: fixed;
-    padding-left: 10px;
-}
-
-.sidebar-nav {
-    /* float: left; */
-    z-index: 1; /* Stay on top */
-    
+.sidebar {
     height: 100%;
-    width: 160px;
+    width: 0;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.7266);
-    overflow: hidden;
-    padding-top: 10px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #b6c9a9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
 
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #6d875b;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+#logout {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #6d875b;
+    display: block;
+    transition: 0.3s;
+}
+
+#logout:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+.openbtn {
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #b6c9a9;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+}
+  
+.openbtn:hover {
+    background-color: #6d875b;
+}
+  
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+
+#content {
+    margin-left: 300px;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.card-results:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 0.7s;
+}
+
+.card-5:hover{
+    background-color: rgb(204, 204, 244);
+}
+
+.card-6:hover{
+    background-color: rgb(244, 204, 204);
+}
+
+.card-test {
+    background-color: rgba(255, 255, 255, 0.74);
+    transition: 0.7s;
+}
+
+.card-test:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 0.7s;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
