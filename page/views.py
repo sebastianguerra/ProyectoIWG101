@@ -63,6 +63,11 @@ datos = [
     "carreras": ["Psicopedagogia", "Pedagogia en ingles", "Pedagogia en lenguaje", "Pedagogia en matematicas"],
     "mensaje": "El mundo necesita progresos en la ciencia, estás son las carreras para ti:"
     },
+    {
+        "area": "Letras y humanidades",
+    "carreras": ["Derecho", "Periodismo", "Ciencias politicas", "Literatura"],
+    "mensaje": "El mundo necesita progresos en la ciencia, estás son las carreras para ti:"
+    },
 ]
   
 datos2 = [
