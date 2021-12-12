@@ -37,9 +37,10 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 {% if request.user.is_authenticated %}
                     <!--User-->
-                    <a href="{% url 'results'%}"><i class="icon ion-md-person lead me-2"></i><strong>{{ request.user.get_username }}</strong></a>
+                    <a>{{ request.user.get_username }}</a>
+                    <a href="{% url 'results'%}"><i class="icon ion-md-stats lead me-2"></i><strong>Resultados</strong></a>
                     <!--Test-->
-                    {% for test in testTypes %}                            <a href="/test/{{test.id}}"><i class="icon ion-md-document lead me-2"></i> Test: {{test.nombre}} </a>
+                    {% for test in testTypes %}<a href="/test/{{test.id}}"><i class="icon ion-md-document lead me-2"></i>Test: {{test.nombre}} </a>
                     {% endfor %}
                     <!--Logout-->
                     <a href="{% url 'logout'%}"></i> Salir</strong></a>

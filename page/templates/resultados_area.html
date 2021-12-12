@@ -65,19 +65,14 @@
                             {% ifequal testType test.test %}   
                                 <h1 class="card-text" >{{test.resultado}}</h1>
                                 
-                                {% for dato in datos %}
+                                {% for dato in datos_areas %}
                                     {% ifequal test.resultado.nombre dato.area %}
                                         {{dato.mensaje}}
                                         {% for carrera in dato.carreras %}
                                             <div class="p-1">
                                                 <details>
                                                     <summary>{{ carrera }}</summary>
-                                                    {%for valor in datos2%}
-                                                        {%ifequal carrera valor.carrera%}
-                                                            {{valor.ingresos}}
-                                                        {%endifequal%}
-                                                    {% endfor %}
-                                                    
+                                                    {{ datos_ingresos|get_sueldo:carrera }}                                                    
                                                 </details>
                                     
                                             </div>

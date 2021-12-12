@@ -1,0 +1,83 @@
+{
+    "Teatro": {
+        "ingresos": "$700.000"
+    },
+    "Arquitectura": {
+        "ingresos": "$1.500.000"
+    },
+    "Cine": {
+        "ingresos": "$800.000"
+    },
+    "Diseño Gráfico": {
+        "ingresos": "$600.000"
+    },
+    "Música": {
+        "ingresos": "$360.000 - $1.200.000"
+    },
+    "Biología": {
+        "ingresos": "$750.000"
+    },
+    "Biotecnología": {
+        "ingresos": "$850.000"
+    },
+    "Química y farmacia": {
+        "ingresos": "$1.200.000"
+    },
+    "Ingeniería en química": {
+        "ingresos": "$1.000.000"
+    },
+    "Ingeniería en alimentos": {
+        "ingresos": "$600.000"
+    },
+    "Enfermería": {
+        "ingresos": "$1.500.000"
+    },
+    "Medicina": {
+        "ingresos": "$2.000.000"
+    },
+    "Kinesiología": {
+        "ingresos": "$1.000.000"
+    },
+    "Obstetricia": {
+        "ingresos": "$800.000"
+    },
+    "Odontología": {
+        "ingresos": "$800.000"
+    },
+    "Psicopedagogía": {
+        "ingresos": "$750.000"
+    },
+    "Pedagogía en inglés": {
+        "ingresos": "$600.000"
+    },
+    "Pedagogía en Lenguaje": {
+        "ingresos": "$600.000"
+    },
+    "Pedagogía en matemáticas": {
+        "ingresos": "$600.000"
+    },
+    "Derecho": {
+        "ingresos": "$2.000.000"
+    },
+    "Periodismo": {
+        "ingresos": "$800.000"
+    },
+    "Ciencias políticas": {
+        "ingresos": "$3.000.000"
+    },
+    "Literatura": {
+        "ingresos": "$800.000 - $1.300.000"
+    },
+    "Idiomas y traduccion": {
+        "ingresos": "$700.000"
+    },
+    "Ingeniería plan común": {
+        "ingresos": "$800.000"
+    },
+    "Ingeniería en computación e informática": {
+        "ingresos": "$1.200.000"
+    },
+    "Ingeniería en fisica": {
+        "ingresos": "$1.000.000"
+    }
+}
