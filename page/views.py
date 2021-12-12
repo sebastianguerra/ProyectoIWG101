@@ -57,6 +57,8 @@ datos_ingresos = read_ingresos()
 
 @login_required
 def resultados(request):
+    # TODO verificar que el usuario haya realizado los tests
+    
     # Negocio accediendo al modelo
     usuario = request.user
     
