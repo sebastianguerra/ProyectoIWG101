@@ -1,0 +1,5 @@
+Django template how to look up a dictionary value with a variable
+https://stackoverflow.com/questions/8000022/django-template-how-to-look-up-a-dictionary-value-with-a-variable
+get_ingresos(dict, key)
+
+

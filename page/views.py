@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
 
+from django.template.defaulttags import register
+
 # Create your views here.
 
 from django.http import HttpResponse
@@ -10,6 +12,7 @@ from django.contrib import messages
 
 from .forms import UserRegisterForm
 
+from .os_lib import read_json_file
 
 def home(request):
     usuario = request.user
@@ -28,6 +31,7 @@ def home(request):
 
 @login_required
 def tests(request, id):
+    # TODO validar que id exista
     test = Test.objects.get(id=id)
     preguntas = Pregunta.objects.filter(test=test)
     return render(request, "tests.html", {
@@ -36,153 +40,24 @@ def tests(request, id):
         'testTypes': Test.objects.all(),
     })
 
+def read_areas() -> list:
+    data = read_json_file('data/areas.json')
+    return data
 
-datos = [
-    {
-        "area": "Artes",
-    "carreras": ["Teatro", "Arquitectura", "Cine", "Diseño Grafico", "Musica"],
-    "mensaje": "El mundo necesita inspiración y tú necesitas expresarte, estás son las carreras para ti:"
-    },
-    {
-        "area": "Ciencias de la salud",
-    "carreras": ["Enfermeria", "Medicina", "Kinesiologia", "Obstetricia", "Odontologia"],
-    "mensaje": "El mundo necesita gente con vocación para sanar, estás son las carreras para ti:"
-    },
-    {
-        "area": "Ingenieria y Carreras afines",
-    "carreras": ["Ingenieria plan comun", "ingenieria en computacion e informatica", "Ingenieria en fisica"],
-    "mensaje": "El mundo necesita gente con visión y ganas de innovar, estás son las carreras para ti:"
-    },
-    {
-        "area": "Biología y química",
-    "carreras": ["Biologia", "Biotecnologia", "Quimica y farmacia"],
-    "mensaje": "El mundo necesita progresos en la ciencia, estás son las carreras para ti:"
-    },
-    {
-        "area": "Educacion",
-    "carreras": ["Psicopedagogia", "Pedagogia en ingles", "Pedagogia en lenguaje", "Pedagogia en matematicas"],
-    "mensaje": "El mundo necesita progresos en la ciencia, estás son las carreras para ti:"
-    },
-    {
-        "area": "Letras y humanidades",
-    "carreras": ["Derecho", "Periodismo", "Ciencias politicas", "Literatura"],
-    "mensaje": "El mundo necesita progresos en la ciencia, estás son las carreras para ti:"
-    },
-]
-  
-datos2 = [
-    {
-        "carrera": "Teatro",
-    "ingresos": "700 000",
-    },
-    {
-        "carrera": "Arquitectura",
-    "ingresos": "1 500 000",
-    },
-    {
-        "carrera": "Cine",
-    "ingresos": "800 000",
-    },
-    {
-        "carrera": "Diseño Grafico",
-    "ingresos": "600 000",
-    },
-    {
-        "carrera": "Musica",
-    "ingresos": "360 000 - 1 200 000",
-    },
-    {
-        "carrera": "Biologia",
-    "ingresos": "750 000",
-    },
-    {
-        "carrera": "Biotecnologia",
-    "ingresos": "850 000",
-    },
-    {
-        "carrera": "Quimica y farmacia",
-    "ingresos": "1 200 000",
-    },
-    {
-        "carrera": "Ingenieria en quimica",
-    "ingresos": "1 000 000",
-    },
-    {
-        "carrera": "Ingenieria en alimentos",
-    "ingresos": "600 000",
-    },
-    {
-        "carrera": "Enfermeria",
-    "ingresos": "1 500 000",
-    },
-    {
-        "carrera": "Medicina",
-    "ingresos": "2 000 000",
-    },
-    {
-        "carrera": "Kinesiologia",
-    "ingresos": "1 000 000",
-    },
-    {
-        "carrera": "Obstetricia",
-    "ingresos": "800 000",
-    },
-    {
-        "carrera": "Odontologia",
-    "ingresos": "800 000",
-    },
-    {
-        "carrera": "Psicopedagogia",
-    "ingresos": "750 000",
-    },
-    {
-        "carrera": "Pedagogia en ingles",
-    "ingresos": "600 000",
-    },
-    {
-        "carrera": "Pedagogia en Lenguaje",
-    "ingresos": "600 000",
-    },
-    {
-        "carrera": "Pedagogia en matematicas",
-    "ingresos": "600 000",
-    },
-    {
-        "carrera": "Derecho",
-    "ingresos": "2 000 000",
-    },
-    {
-        "carrera": "Periodismo",
-    "ingresos": "800 000",
-    },
-    {
-        "carrera": "Ciencias politicas",
-    "ingresos": "3 000 000",
-    },
-    {
-        "carrera": "Literatura",
-    "ingresos": "800 000 - 1 300 000",
-    },
-    {
-        "carrera": "Idiomas y traduccion",
-    "ingresos": "700 000",
-    },
-    {
-        "carrera": "Ingenieria plan comun",
-    "ingresos": "800 000",
-    },
-    {
-        "carrera": "Ingenieria en computación e informatica",
-    "ingresos": "1 200 000",
-    },
-    {
-        "carrera": "Ingenieria en fisica",
-    "ingresos": "1 000 000",
-    },
-]
+def read_ingresos() -> dict:
+    data = read_json_file('data/ingresos.json')
+    return data
+
+@register.filter
+def get_sueldo(dictionary: dict, key):
+    return dictionary[key]["ingresos"]
+
+datos_areas = read_areas()
+datos_ingresos = read_ingresos()
 
 @login_required
 def resultados(request):
+    # Negocio accediendo al modelo
     usuario = request.user
     
     userTests = Test_Realizacion.objects.filter(user=usuario)
@@ -201,7 +76,8 @@ def resultados(request):
         Respuestas_tests += list(respuestasUsuario \
             .filter(test_realizacion=test))
 
-    return render(request, "resultados_area.html", {
+    # Template
+    context = {
         "tests": userTests ,
         "testTypes": testTypes,
         "Areas": Areas,
@@ -213,11 +89,14 @@ def resultados(request):
             "Lo que amas": "rgba(200,0,0,0.2)",
         },
         "ultimosTestsUsuario": ultimosTestsUsuario,
-        "datos": datos, 
-        "datos2": datos2, 
-    })
+        "datos_areas": datos_areas, 
+        "datos_ingresos": datos_ingresos, 
+    }
+
+    return render(request, "resultados_area.html", context=context)
 
 def about(request):
+    # TODO implementar
     pass
 
 def procesar_preguntas(request):
