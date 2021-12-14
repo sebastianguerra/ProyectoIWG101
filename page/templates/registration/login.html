@@ -2,18 +2,24 @@
 
 {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
+  {% if form.errors %}
+    <div class="alert alert-danger">
+      <p>Tu usuario y contraseña no coincidieron, intentalo denuevo</p>
+    </div>
+  {% endif %}
+  
+  {% if next %}
+    
+      {% if user.is_authenticated %}
+      <div class="alert alert-danger"></div>
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+      <div>
+  {% endif %}
 
 <div class="card p-3">
   <form method="post" action="{% url 'login' %}">
