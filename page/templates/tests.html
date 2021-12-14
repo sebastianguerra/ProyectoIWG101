@@ -11,7 +11,8 @@
             {% for pregunta in preguntas %}
                 <div class="card p-3 mt-3 card-test">
                     <div class="card-body text-dark ">
-                        <div class="card-title">{{ pregunta.texto }}</div>
+                        <div class="card-title"><h4>{{ pregunta.texto }}</h3></div>
+                        <hr>
                         <div class="form-check">
                             <div>
                                 <input class="form-check-input" type="radio" id="e{{pregunta.id}}" name="{{pregunta.id}}" value="2">
