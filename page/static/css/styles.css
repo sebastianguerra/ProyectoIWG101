@@ -15,7 +15,9 @@ body {
     background-size: 135em;
 
 }
-
+.olvide, .salir {
+    text-decoration: none;
+}
 .sidebar {
     height: 100%;
     width: 0;
