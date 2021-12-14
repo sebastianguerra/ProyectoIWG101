@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="card p-3">
+    <h3>Registrate</h3>
     <form class="form" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
