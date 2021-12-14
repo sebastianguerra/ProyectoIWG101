@@ -7,11 +7,13 @@
 body {
     background-image: url('/static/images/productive.png');
     background-attachment: fixed;
-    background-position: -30px -80px;
+    background-position: -10px 0px;
     font-family: 'Mulish', sans-serif;
     font-weight: 300;
     color: var(--primary);
     background-repeat: no-repeat;
+    background-size: 135em;
+
 }
 
 .sidebar {
