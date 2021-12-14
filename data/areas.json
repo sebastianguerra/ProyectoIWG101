@@ -1,0 +1,62 @@
+[
+    {
+        "area": "Artes",
+        "carreras": [
+            "Teatro",
+            "Arquitectura",
+            "Cine",
+            "Diseño Gráfico",
+            "Música"
+        ],
+        "mensaje": "El mundo necesita inspiración y tú necesitas expresarte, estas son las carreras para ti:"
+    },
+    {
+        "area": "Ciencias de la salud",
+        "carreras": [
+            "Enfermería",
+            "Medicina",
+            "Kinesiología",
+            "Obstetricia",
+            "Odontología"
+        ],
+        "mensaje": "El mundo necesita gente con vocación para sanar, estas son las carreras para ti:"
+    },
+    {
+        "area": "Ingeniería y Carreras afines",
+        "carreras": [
+            "Ingeniería plan común",
+            "Ingeniería en computación e informática",
+            "Ingeniería en fisica"
+        ],
+        "mensaje": "El mundo necesita gente con visión y ganas de innovar, estas son las carreras para ti:"
+    },
+    {
+        "area": "Biología y química",
+        "carreras": [
+            "Biología",
+            "Biotecnología",
+            "Química y farmacia"
+        ],
+        "mensaje": "El mundo necesita progresos en la ciencia, estas son las carreras para ti:"
+    },
+    {
+        "area": "Educación",
+        "carreras": [
+            "Psicopedagogía",
+            "Pedagogía en inglés",
+            "Pedagogía en lenguaje",
+            "Pedagogía en matemáticas"
+        ],
+        "mensaje": "El mundo necesita progresos en la ciencia, estas son las carreras para ti:"
+    },
+    {
+        "area": "Letras y humanidades",
+        "carreras": [
+            "Derecho",
+            "Periodismo",
+            "Ciencias políticas",
+            "Literatura"
+        ],
+        "mensaje": "El mundo necesita progresos en la ciencia, estas son las carreras para ti:"
+    }
+]
