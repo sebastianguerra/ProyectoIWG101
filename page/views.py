@@ -49,7 +49,7 @@ datos = [
     "mensaje": "El mundo necesita gente con vocación para sanar, estás son las carreras para ti:"
     },
     {
-        "area": "Ingenieria y Carreras afines",
+        "area": "Ingeniería y Carreras afines",
     "carreras": ["Ingenieria plan comun", "ingenieria en computacion e informatica", "Ingenieria en fisica"],
     "mensaje": "El mundo necesita gente con visión y ganas de innovar, estás son las carreras para ti:"
     },
