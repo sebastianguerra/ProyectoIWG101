@@ -7,13 +7,17 @@
 body {
     background-image: url('/static/images/productive.png');
     background-attachment: fixed;
-    background-position: -30px -80px;
+    background-position: -10px 0px;
     font-family: 'Mulish', sans-serif;
     font-weight: 300;
     color: var(--primary);
     background-repeat: no-repeat;
-}
+    background-size: 135em;
 
+}
+.olvide, .salir {
+    text-decoration: none;
+}
 .sidebar {
     height: 100%;
     width: 0;
@@ -94,7 +98,7 @@ body {
 }
 
 #content {
-    margin-left: 150px;
+    margin-left: 250px;
     height: 100vh;
     padding-bottom: 5rem;
 }
@@ -121,7 +125,7 @@ body {
 .card-test {
     background-color: rgba(255, 255, 255, 0.74);
     transition: 0.7s;
-    width: 800px;
+    
 }
 
 .card-test:hover {
